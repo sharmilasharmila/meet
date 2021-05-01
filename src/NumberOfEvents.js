@@ -1,32 +1,32 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
-class NumberOfEvents extends Component{
-    state = {
-        count :32
-    };
+class NumberOfEvents extends Component {
+  state = {
+    eventValue: 32,
+  };
 
-    handleInputChange = (event)=>{
-        const count = event.target.value;
-        this.setState({
-            count
-        });
-    };
+  handleEventInputChanged = (event) => {
+    const eventValue = event.target.value;
+    this.setState({
+      eventValue,
+    });
+  };
 
-    render(){
-        return(
-            <div className="eventCounter">
-                <lable htmlFor='eventCount'></lable>
-                <input
-                    type="number"
-                    name="eventCount"
-                    className="eventInputCount"
-                    placeholder="Please Enter the Count"
-                    value = {this.state.count}
-                    onChange = {this.handleInputChange} 
-                />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className='event-number'>
+        <label htmlFor='numberOfEvent'></label>
+        <input
+          type='number'
+          name='numberOfEvent'
+          className='event-number-input'
+          placeholder='Enter Number of Events'
+          value={this.state.eventValue}
+          onChange={this.handleEventInputChanged}
+        />
+      </div>
+    );
+  }
 }
 
 export default NumberOfEvents;
