@@ -9,18 +9,18 @@ describe('<NumberOfEvents /> component', () => {
   });
 
   test('render text input', () => {
-    expect(NumberOfEventsWrapper.find('.event-number-input')).toHaveLength(1);
+    expect(NumberOfEventsWrapper.find('.inputEvent')).toHaveLength(1);
   });
 
   test('check input default value is equal to 32', () => {
     expect(
-      NumberOfEventsWrapper.find('.event-number-input').at(0).props().value
+      NumberOfEventsWrapper.find('.inputEvent').at(0).props().value
     ).toEqual(32);
   });
 
   test('check placeholder to be Enter number of events', () => {
     expect(
-      NumberOfEventsWrapper.find('.event-number-input').at(0).props()
+      NumberOfEventsWrapper.find('.inputEvent').at(0).props()
         .placeholder
     ).toEqual('Enter Number of Events');
   });
@@ -28,7 +28,7 @@ describe('<NumberOfEvents /> component', () => {
   test('check on change state', () => {
     const eventValue = { target: { value: 8 } };
 
-    NumberOfEventsWrapper.find('.event-number-input').simulate(
+    NumberOfEventsWrapper.find('.inputEvent').simulate(
       'change',
       eventValue
     );
@@ -37,7 +37,7 @@ describe('<NumberOfEvents /> component', () => {
 
   test('check type is equal to number', () => {
     expect(
-      NumberOfEventsWrapper.find('.event-number-input').at(0).props().type
+      NumberOfEventsWrapper.find('.inputEvent').at(0).props().type
     ).toEqual('number');
   });
 });
